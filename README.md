@@ -38,6 +38,32 @@ void loop() {
     
     digitalWrite(ledPin, HIGH); 
     Serial.println("State: Latching ON");
+    const int buttonPin = 2; 
+const int ledPin = 7;    
+const int activeDuration = 3000; 
+
+void setup() {
+  pinMode(buttonPin, INPUT_PULLUP); 
+  pinMode(ledPin, OUTPUT);         
+  Serial.begin(9600);
+  Serial.println("System Initialized...");
+}
+
+void loop() {
+  if (digitalRead(buttonPin) == LOW) {
+    Serial.println("Event: Button Pressed");
+    
+    digitalWrite(ledPin, HIGH); 
+    Serial.println("State: Latching ON");
+    
+    delay(activeDuration);      
+    
+    digitalWrite(ledPin, LOW);  
+    Serial.println("State: Auto Power Off");
+    
+    delay(500); 
+  }
+}
     
     delay(activeDuration);      
     
