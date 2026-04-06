@@ -21,3 +21,29 @@ A comprehensive data logging and control interface demonstrating Sensor Fusion.
 1.	Code Optimization: Used map() functions and constants for scalable timing.
 2.	User Experience (UX): Integrated visual indicators (LED patterns) for system states.
 3.	Efficiency: Replaced external hardware latches with robust software logic to reduce component count.
+const int buttonPin = 2; 
+const int ledPin = 7;    
+const int activeDuration = 3000; 
+
+void setup() {
+  pinMode(buttonPin, INPUT_PULLUP); 
+  pinMode(ledPin, OUTPUT);         
+  Serial.begin(9600);
+  Serial.println("System Initialized...");
+}
+
+void loop() {
+  if (digitalRead(buttonPin) == LOW) {
+    Serial.println("Event: Button Pressed");
+    
+    digitalWrite(ledPin, HIGH); 
+    Serial.println("State: Latching ON");
+    
+    delay(activeDuration);      
+    
+    digitalWrite(ledPin, LOW);  
+    Serial.println("State: Auto Power Off");
+    
+    delay(500); 
+  }
+}
