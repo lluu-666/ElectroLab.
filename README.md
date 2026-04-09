@@ -35,13 +35,15 @@ A comprehensive data logging and control interface demonstrating Sensor Fusion.
    
 
 Task one code 
-const int buttonPin = 2; 
-const int ledPin = 7;    
-const int activeDuration = 3000; 
+<pre>
+```cpp
+const int buttonPin = 2;
+const int ledPin = 7;
+const int activeDuration = 3000;
 
 void setup() {
-  pinMode(buttonPin, INPUT_PULLUP); 
-  pinMode(ledPin, OUTPUT);         
+  pinMode(buttonPin, INPUT_PULLUP);
+  pinMode(ledPin, OUTPUT);
   Serial.begin(9600);
   Serial.println("System Initialized...");
 }
@@ -49,22 +51,27 @@ void setup() {
 void loop() {
   if (digitalRead(buttonPin) == LOW) {
     Serial.println("Event: Button Pressed");
-    
-    digitalWrite(ledPin, HIGH); 
+
+    digitalWrite(ledPin, HIGH);
     Serial.println("State: Latching ON");
-    
-    delay(activeDuration);      
-    
-    digitalWrite(ledPin, LOW);  
+
+    delay(activeDuration);
+
+    digitalWrite(ledPin, LOW);
     Serial.println("State: Auto Power Off");
-    
-    delay(500); 
+
+    delay(500);
   }
 }
+```
+</pre>
 
+  
 Task tow code
-const int digitalSensor = 2; 
-const int analogSensor = A0; 
+<pre>
+```cpp id="7z8s1n"
+const int digitalSensor = 2;
+const int analogSensor = A0;
 
 void setup() {
   pinMode(digitalSensor, INPUT_PULLUP);
@@ -75,19 +82,21 @@ void setup() {
 void loop() {
   int dState = digitalRead(digitalSensor);
   int aValue = analogRead(analogSensor);
-  
+
   int percent = map(aValue, 0, 1023, 0, 100);
 
   Serial.print("Digital: ");
-  Serial.print(dState); 
+  Serial.print(dState);
   Serial.print(" | Analog: ");
   Serial.print(aValue);
   Serial.print(" | Level: ");
   Serial.print(percent);
   Serial.println("%");
 
-  delay(250); 
+  delay(250);
 }
+```
+</pre>
 
 
 
