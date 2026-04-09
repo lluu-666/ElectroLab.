@@ -31,5 +31,6 @@ A comprehensive data logging and control interface demonstrating Sensor Fusion.
 1.	Code Optimization: Used map() functions and constants for scalable timing.
 2.	User Experience (UX): Integrated visual indicators (LED patterns) for system states.
 3.	Efficiency: Replaced external hardware latches with robust software logic to reduce component count.
+   
 
 c
