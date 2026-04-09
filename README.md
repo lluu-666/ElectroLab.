@@ -98,6 +98,9 @@ void loop() {
 ```
 </pre>
 
+<img width="1368" height="778" alt="Task 1" src="https://github.com/user-attachments/assets/d2e9be85-a791-479e-a9fb-a7ef3b9a1a30" />
+<img width="978" height="747" alt="Task 2" src="https://github.com/user-attachments/assets/f44ad633-f991-4300-8dae-42350f301098" />
+
 
 
 
