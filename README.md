@@ -146,4 +146,81 @@ The Arduino sends signals to the motor driver to control the motor operation. At
 
 This project demonstrates how multiple components can be integrated using Arduino to build a functional system. It serves as a foundation for more advanced embedded systems projects.
 
+<pre>
+```cpp id="r9x2qp"
+#include <Wire.h>
+#include <LiquidCrystal_I2C.h>
+
+// Initialize LCD (common address 0x27)
+LiquidCrystal_I2C lcd(0x27, 16, 2);
+
+// Motor pins (L293D)
+const int motor1Pin1 = 8; 
+const int motor1Pin2 = 9; 
+const int motor2Pin1 = 10;
+const int motor2Pin2 = 11;
+
+void setup() {
+  // Set motor pins as outputs
+  pinMode(motor1Pin1, OUTPUT);
+  pinMode(motor1Pin2, OUTPUT);
+  pinMode(motor2Pin1, OUTPUT);
+  pinMode(motor2Pin2, OUTPUT);
+
+  // Initialize LCD
+  lcd.init();
+  lcd.backlight();
+  lcd.setCursor(0, 0);
+  lcd.print("Robot Ready!");
+  delay(2000);
+}
+
+void loop() {
+  // Move forward
+  moveForward();
+  lcd.clear();
+  lcd.print("Moving Forward");
+  delay(2000);
+
+  // Stop
+  stopMotors();
+  lcd.clear();
+  lcd.print("Stopped");
+  delay(1000);
+
+  // Move backward
+  moveBackward();
+  lcd.clear();
+  lcd.print("Moving Backward");
+  delay(2000);
+}
+
+// Move forward function
+void moveForward() {
+  digitalWrite(motor1Pin1, HIGH);
+  digitalWrite(motor1Pin2, LOW);
+  digitalWrite(motor2Pin1, HIGH);
+  digitalWrite(motor2Pin2, LOW);
+}
+
+// Move backward function
+void moveBackward() {
+  digitalWrite(motor1Pin1, LOW);
+  digitalWrite(motor1Pin2, HIGH);
+  digitalWrite(motor2Pin1, LOW);
+  digitalWrite(motor2Pin2, HIGH);
+}
+
+// Stop motors function
+void stopMotors() {
+  digitalWrite(motor1Pin1, LOW);
+  digitalWrite(motor1Pin2, LOW);
+  digitalWrite(motor2Pin1, LOW);
+  digitalWrite(motor2Pin2, LOW);
+}
+```
+</pre>
+<img width="1914" height="907" alt="لقطة شاشة 2026-04-09 134724" src="https://github.com/user-attachments/assets/796d366b-ca40-4b6b-9b52-d7f98ef9b7fa" />
+
+
 
