@@ -25,10 +25,71 @@ A comprehensive data logging and control interface demonstrating Sensor Fusion.
 • Input Handling: Digital Debouncing & Analog Signal Mapping
 • Development Environment: Autodesk Tinkercad (Simulation)
 
-
+ 
+ 
 
  Why this implementation is professional?
 1.	Code Optimization: Used map() functions and constants for scalable timing.
 2.	User Experience (UX): Integrated visual indicators (LED patterns) for system states.
 3.	Efficiency: Replaced external hardware latches with robust software logic to reduce component count.
    
+
+Task one code 
+const int buttonPin = 2; 
+const int ledPin = 7;    
+const int activeDuration = 3000; 
+
+void setup() {
+  pinMode(buttonPin, INPUT_PULLUP); 
+  pinMode(ledPin, OUTPUT);         
+  Serial.begin(9600);
+  Serial.println("System Initialized...");
+}
+
+void loop() {
+  if (digitalRead(buttonPin) == LOW) {
+    Serial.println("Event: Button Pressed");
+    
+    digitalWrite(ledPin, HIGH); 
+    Serial.println("State: Latching ON");
+    
+    delay(activeDuration);      
+    
+    digitalWrite(ledPin, LOW);  
+    Serial.println("State: Auto Power Off");
+    
+    delay(500); 
+  }
+}
+
+Task tow code
+const int digitalSensor = 2; 
+const int analogSensor = A0; 
+
+void setup() {
+  pinMode(digitalSensor, INPUT_PULLUP);
+  Serial.begin(9600);
+  Serial.println("Sensor Monitoring System Active");
+}
+
+void loop() {
+  int dState = digitalRead(digitalSensor);
+  int aValue = analogRead(analogSensor);
+  
+  int percent = map(aValue, 0, 1023, 0, 100);
+
+  Serial.print("Digital: ");
+  Serial.print(dState); 
+  Serial.print(" | Analog: ");
+  Serial.print(aValue);
+  Serial.print(" | Level: ");
+  Serial.print(percent);
+  Serial.println("%");
+
+  delay(250); 
+}
+
+
+
+
+
