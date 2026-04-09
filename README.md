@@ -101,72 +101,49 @@ void loop() {
 <img width="1914" height="912" alt="لقطة شاشة 2026-04-09 124654" src="https://github.com/user-attachments/assets/b86ba261-73d0-4c85-b1c3-710fc8c58ad5" />
 <img width="1907" height="910" alt="لقطة شاشة 2026-04-09 124736" src="https://github.com/user-attachments/assets/c78a93e1-b447-4570-ba52-dfebc9bd8996" />
 
+Arduino Motor Control with LCD Display
+⸻
+ Objective:
+The aim of this project is to control a DC motor using an Arduino and display its operating status on an LCD screen.
+⸻
 
+ Project Description:
+This project uses an Arduino board to control a DC motor through a motor driver, while displaying the system status (ON/OFF) on a 16x2 LCD screen. This allows easy monitoring of the system in real time.
 
-LDR Sensor Technical Brief
-• 1. Acronym & Name:
-LDR stands for Light Dependent Resistor. It is also commonly known as a Photoresistor.
-• 2. Scientific Principle:
-It operates on the principle of Photoconductivity. The component's electrical resistance decreases as the intensity of the incident light increases. In darkness, the resistance is very high (Megaohms), and in bright light, it drops significantly (Ohms).
-• 3. Signal Type & Components:
-• Signal Type: Analog. It provides a continuous range of voltage values based on light intensity.
-• Required Resistor: A 10kΩ resistor is used in a Voltage Divider configuration to translate the resistance change into a measurable voltage for the Arduino.
+⸻
+ Components:
+	•	Arduino Uno
+	•	LCD 16x2
+	•	DC Motor
+	•	Motor Driver (L298N)
+	•	Jumper Wires
 
+⸻
 
+⚙️ Circuit Connections:
 
-Circuit Construction Steps (Tinkercad)
-1.	Placement: Place an Arduino Uno and a Breadboard in the workspace.
-2.	LDR Setup: * Connect one leg of the LDR to the 5V rail.
-• Connect the other leg to the Arduino Analog Pin A0.
-• From that same leg (A0 connection), connect a 10kΩ resistor to the GND rail (this creates the Voltage Divider).
+The DC motor is connected to a motor driver module, which acts as an interface between the motor and the Arduino. The control pins of the motor driver are connected to Arduino digital pins 7 and 8 to manage motor operation and direction.
 
+The LCD 16x2 is connected to the Arduino using digital pins, where RS is connected to pin 12, E to pin 11, D4 to pin 5, D5 to pin 4, D6 to pin 3, and D7 to pin 2.
 
-3.	LED Setup:
-• Connect the Anode (longer leg) of the LED to Digital Pin 13.
-• Connect the Cathode (shorter leg) to a 220Ω resistor, and the other end of the resistor to GND.
- Street Light Simulation Code (Professional Version)
-This code simulates a smart street lighting system: it automatically turns the light ON when it’s dark and OFF during the day.
-<pre>
-```cpp id="m4k9xz"
-/*
- * Project: Smart Street Light System
- * Task: LDR Sensor Implementation
- * Logic: LED triggers based on ambient light threshold
- */
+Power connections are established by connecting 5V to supply the components, and all GND pins are connected together to ensure proper circuit operation.
 
-const int ldrPin = A0;     // LDR sensor input
-const int ledPin = 13;     // Street light output
-const int threshold = 500; // Light sensitivity threshold
+⸻
 
-void setup() {
-  pinMode(ledPin, OUTPUT);
-  Serial.begin(9600); // Initialize Serial Monitor for debugging
-  Serial.println("System Initialized: Monitoring Ambient Light...");
-}
+ Working Principle:
 
-void loop() {
-  // Read the analog value from LDR (0 - 1023)
-  int lightLevel = analogRead(ldrPin);
-  
-  // Output light level to Serial Monitor
-  Serial.print("Current Light Level: ");
-  Serial.println(lightLevel);
+The Arduino sends signals to the motor driver to control the motor operation. At the same time, it sends data to the LCD to display the current system status (ON or OFF).
 
-  // Street Light Logic
-  if (lightLevel < threshold) {
-    // It's Dark: Turn LED ON
-    digitalWrite(ledPin, HIGH);
-    Serial.println("Status: Night Detected - LED ON");
-  } else {
-    // It's Bright: Turn LED OFF
-    digitalWrite(ledPin, LOW);
-    Serial.println("Status: Day Detected - LED OFF");
-  }
-  
-  delay(500); // Small delay for stability
-}
-```
-</pre>
+⸻
 
+ Results:
+	•	The motor operated successfully
+	•	The LCD displayed the system status correctly
+	•	The system worked in a stable and reliable manner
+
+⸻
+ Conclusion:
+
+This project demonstrates how multiple components can be integrated using Arduino to build a functional system. It serves as a foundation for more advanced embedded systems projects.
 
 
