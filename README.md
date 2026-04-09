@@ -235,6 +235,9 @@ void stopMotors() {
 ```
 </pre>
 <img width="1914" height="907" alt="لقطة شاشة 2026-04-09 134724" src="https://github.com/user-attachments/assets/796d366b-ca40-4b6b-9b52-d7f98ef9b7fa" />
+<img width="1913" height="909" alt="لقطة شاشة 2026-04-09 142620" src="https://github.com/user-attachments/assets/f03d8fd4-ae01-48c0-bfb6-69df4952ec88" />
+<img width="1916" height="913" alt="لقطة شاشة 2026-04-09 142716" src="https://github.com/user-attachments/assets/ea754308-6f23-4924-9998-7e757b1caa72" />
+<img width="1916" height="907" alt="لقطة شاشة 2026-04-09 142650" src="https://github.com/user-attachments/assets/4fc52c9f-b24a-4fa3-8dd1-15a0f50eec86" />
 
 
 
