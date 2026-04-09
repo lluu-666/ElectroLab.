@@ -1,19 +1,21 @@
+![16189bc5-a717-42b2-a404-77dd8dec3a7c](https://github.com/user-attachments/assets/8d2344d8-bac2-4ef2-9ca4-1ca71f5b8b5e)
 
-TASK 1&2
-Project Overview: Smart Control & Power Management System
-This repository contains two integrated tasks developed using Arduino Uno, focusing on intelligent power management and multi-sensor data acquisition.
 
 
 
  Task 1: Intelligent Latching Switch with Auto-Power Off
 A high-efficiency power control system designed to simulate industrial safety switches.
+
+
 • Concept: Implemented a Software-Based Latch. Upon a single digital trigger, the system activates and maintains power (ON state) without continuous manual input.
 • Smart Feature: Integrated an Auto-Power Off mechanism. The system automatically cuts power after a predefined duration to conserve energy and ensure safety.
 • Visual Feedback: Added a "Pre-shutdown Warning" (LED Blinking) to alert the user before the automatic system cut-off.
 
 
  Task 2: Multi-Sensor Integration (Digital & Analog)
+
 A comprehensive data logging and control interface demonstrating Sensor Fusion.
+
 • Digital Interface: Utilized a Push-Button with internal PULLUP resistors for noise-free signal detection.
 • Analog Interface: Integrated a Potentiometer to sample continuous real-time data (0-1023 range).
 • Dynamic Control: The system maps analog inputs to control the timing of the Task 1 latching duration, creating an Adaptive Control Loop.
@@ -101,7 +103,19 @@ void loop() {
 <img width="1914" height="912" alt="لقطة شاشة 2026-04-09 124654" src="https://github.com/user-attachments/assets/b86ba261-73d0-4c85-b1c3-710fc8c58ad5" />
 <img width="1907" height="910" alt="لقطة شاشة 2026-04-09 124736" src="https://github.com/user-attachments/assets/c78a93e1-b447-4570-ba52-dfebc9bd8996" />
 
+
+_________________________________________
+
+
+
+Task 3&4
+
+![16189bc5-a717-42b2-a404-77dd8dec3a7c](https://github.com/user-attachments/assets/ab8efd47-9cea-4fda-9863-ad90ec650b66)
+
+
 Arduino Motor Control with LCD Display
+
+
 ⸻
  Objective:
 The aim of this project is to control a DC motor using an Arduino and display its operating status on an LCD screen.
