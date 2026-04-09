@@ -101,6 +101,8 @@ void loop() {
 <img width="1914" height="912" alt="لقطة شاشة 2026-04-09 124654" src="https://github.com/user-attachments/assets/b86ba261-73d0-4c85-b1c3-710fc8c58ad5" />
 <img width="1907" height="910" alt="لقطة شاشة 2026-04-09 124736" src="https://github.com/user-attachments/assets/c78a93e1-b447-4570-ba52-dfebc9bd8996" />
 
+
+
 LDR Sensor Technical Brief
 • 1. Acronym & Name:
 LDR stands for Light Dependent Resistor. It is also commonly known as a Photoresistor.
@@ -109,6 +111,7 @@ It operates on the principle of Photoconductivity. The component's electrical re
 • 3. Signal Type & Components:
 • Signal Type: Analog. It provides a continuous range of voltage values based on light intensity.
 • Required Resistor: A 10kΩ resistor is used in a Voltage Divider configuration to translate the resistance change into a measurable voltage for the Arduino.
+
 
 
 Circuit Construction Steps (Tinkercad)
